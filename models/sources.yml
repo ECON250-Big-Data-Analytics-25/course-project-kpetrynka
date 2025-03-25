@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: kpetrynka
+    database: econ250-2025  
+    schema: kpetrynka  
+    tables:
+      - name: week3_arxiv
+     
