@@ -6,4 +6,11 @@ sources:
     schema: kpetrynka  
     tables:
       - name: week3_arxiv
-     
+      - name: sheet_external
+  
+  - name: test_dataset
+    database: econ250-2025  
+    schema: test_dataset  
+    tables:
+      - name: week3_arxiv
+      - name: sheet_external

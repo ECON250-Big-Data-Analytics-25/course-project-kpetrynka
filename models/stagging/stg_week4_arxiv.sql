@@ -7,4 +7,4 @@ date_trunc(published_date, month) AS publish_month,
 
   split(regexp_replace(authors, r"\'|\[|\]", ''), ',') as split_authors,
   * 
-from {{ source('kpetrynka', 'week3_arxiv') }}
+from {{ source('test_dataset', 'week3_arxiv') }}
