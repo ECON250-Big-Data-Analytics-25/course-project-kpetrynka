@@ -1,11 +1,9 @@
-SELECT 
-id,
-published_date,
-updated_date,
-summary,
+{{ config(materialized="ephemeral")}}
 
+SELECT 
+*,
 date_diff(updated_date, published_date, day) days_until_updated,
-if(published_date = updated_date, 1, 0) as is_updated,
+if(published_date != updated_date, 1, 0) as is_updated,
 
 if(
   summary like '%GPT%'
