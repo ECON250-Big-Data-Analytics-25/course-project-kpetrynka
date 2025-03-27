@@ -1,4 +1,4 @@
-econ250_2025:
+econ250-2025:
   outputs:
     dev:
       dataset: kpetrynka # TODO: Change this to your personal dataset
