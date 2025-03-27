@@ -1,0 +1,15 @@
+# models_staging.yml
+version: 2
+
+models:
+  - name: stg_week5_web_transactions
+    description: "Clean transaction data"
+    columns:
+      - name: transaction.transactionId
+        description: "The Transaction ID"
+        data_tests:
+        - unique:
+            config:
+                severity: error
+                error_if: ">100"
+                warn_if: ">0"
