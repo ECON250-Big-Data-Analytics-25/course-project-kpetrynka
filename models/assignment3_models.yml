@@ -1,0 +1,42 @@
+
+version: 2
+
+models:
+  - name: stg_assignment3_uk_wiki
+    description: Combining data with source definition, date, day and hour extraction from datehour. 
+    columns:
+      - name: src
+        description: Source of data. Based on input table, desktop or mobile
+        data_tests:
+          - not_null
+          - accepted_values: 
+            values: ['mobile', 'desktop']
+
+  - name: int_assignment3_uk_wiki
+    description: Page Classification Model. Sorts out the meta pages and classifies them.
+    columns:
+      - name: is_meta_page
+        description: True if yes, False for real articles
+      - name: meta_page_type
+        description: Gets the type of meta page (first word before ':')
+      - name: modified_title
+        description: Corrects Вікіпедія where needed
+
+
+  - name: fct_assignment3_top200
+    description: Fact Model on Top 200 articles (meta pages excluded) by total views. Ordered by the mobile mobile_percentage
+    columns:
+      - name: total_views
+        description: Summed views per article
+      - name: total_mobile_views
+        description: Summed views from mobile users per article
+      - name: mobile_percentage
+        description: (total_mobile_views / total_views) * 100 rounded to 2
+
+  - name: fct_assigment3_least_mobile
+    description: Analysis of AWStats article, which has 14734 views bit only 0.05% is for mobile users
+    columns:
+      - name: hour_of_day
+        description: Derived before, grouped by and ordered by
+      - name: total_views
+      - name: total_mobile_views
