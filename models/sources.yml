@@ -28,10 +28,16 @@ sources:
                   severity: error
                   error_if: ">10"
                   warn_if: ">0"
+          - name: visitId
+            description: '{{ doc("visitid_description") }}'
       - name: week5_web_visits
+        columns: 
+          - name: visitId
+            description: '{{ doc("visitid_description") }}'
       - name: week5_hits
-
-
+        columns:
+          - name: visitId
+            description: '{{ doc("visitid_description") }}'
 
 
   - name: google_trends
