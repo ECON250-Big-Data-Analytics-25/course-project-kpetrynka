@@ -2,12 +2,20 @@
 version: 2
 
 models:
-  - name: stg_week5_web_transactions
+  - name: week5_web_transactions
     description: "Clean transaction data"
     columns:
       - name: transaction.transactionId
+        description: Transaction Id deplicated (unique for the model)
+        data_tests:
+        - not_null
+      - name: transaction.transactionRevenue
+        data_tests:
+        - not_null
+      - name: _surrogate_key
         description: "The Transaction ID"
         data_tests:
+        - not_null
         - unique:
             config:
                 severity: error

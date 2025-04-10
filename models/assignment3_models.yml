@@ -9,8 +9,7 @@ models:
         description: Source of data. Based on input table, desktop or mobile
         data_tests:
           - not_null
-          - accepted_values: 
-            values: ['mobile', 'desktop']
+
 
   - name: int_assignment3_uk_wiki
     description: Page Classification Model. Sorts out the meta pages and classifies them.

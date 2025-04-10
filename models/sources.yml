@@ -38,6 +38,9 @@ sources:
         columns:
           - name: visitId
             description: '{{ doc("visitid_description") }}'
+      - name: assignment5_input
+        description: The table contains Wikipedia pageview data for both desktop ( uk ) and mobile ( uk.m ) versions 
+
 
 
   - name: google_trends

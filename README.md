@@ -112,3 +112,5 @@ If everything is set up well, you will see similar output:
 
 If you have any troubles with installation, please contact the course instructor (Oleh Omelchenko) in slack for assist.
 
+# Final Project Overview
+That was a lot of work, but I survived and completed each part. More descriptions in the models and tables documentation! Thanks for the course! Hope to see you soon!
