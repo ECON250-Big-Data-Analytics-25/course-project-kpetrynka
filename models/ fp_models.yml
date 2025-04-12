@@ -1,0 +1,57 @@
+models:
+  - name: stg_fp_sellers
+    description: cleaning and formatting cities, fixing zip code
+  - name: stg_fc_payments
+    description: new variable introduction (by_voucher)
+    columns:
+      - name: by_voucher
+        description: to see where they are more active in fct
+  - name: stg_fp_customers
+    description: zip code fixed
+    columns:
+      - name: customer_zip_code_prefix_fix
+  - name: stg_fp_geolocation
+    description: cleaning and formatting cities
+    columns:
+      - name: geolocation_city_fx
+        description: unified city names
+  - name: stg_fp_order_items
+    description: shipping limit day introduced
+    columns:
+      - name: shipping_limit_day
+        description: day rather than date as all values has 00:00
+  - name: stg_fp_orders
+    description: time difference imposed
+    columns:
+      - name: diff_to_approve_h
+        description: time between ordering and approving in hours
+      - name: diff_to_deliver_d
+        description: difference between approving and delivering the order in days
+      - name: diff_in_delivery_d
+        description: difference between estimated delivery day and actual carrier delivery in days
+  - name: stg_fp_product_categories
+    description: aggregating into bigger categories and fixing some small mistakes
+    columns:
+      - name: product_category_agg
+        description: fashion, furniture, books, construction tools
+
+  - name: fp_sales_full
+    description: pulling all together
+
+  - name: fct_fp_product_categories
+    description: analysing the most popular categories by monthes in years
+  - name: fct_fp_regional_differences
+    description: checking volumes of purchases in regions and usage of vouchers
+  - name: fct_fp_seller_performance
+    description: checking sellers performance in cities
+
+tests:
+  - name: test_total_revenue_consistency
+    description: "Check that total revenue in sales_full and mart are consistent"
+    config:
+      severity: error
+    custom:
+      expression: revenue_diff < 0.01
+
+  
+
